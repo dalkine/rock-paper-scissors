@@ -1,0 +1,39 @@
+body {
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  background-color: #ece4b7;
+  align-items: center;
+  justify-content: center;
+}
+.header {
+  background-color: #fc9f5b;
+  height: 100px;
+  width: 100%;
+}
+h1 {
+  text-align: center;
+}
+.optionsSection {
+  display: flex;
+}
+.rpsWrapper {
+  height: 250px;
+  width: 250px;
+  margin: 10px;
+  background-color: #7dcfb6;
+}
+.playersChose {
+  display: flex;
+}
+div.playersChose > .rpsWrapper {
+  height: 200px;
+  width: 200px;
+  flex: 2 1 0;
+}
+div.playersChose > h2 {
+  flex: 1 1 0;
+}
+.scoreSection {
+  text-align: center;
+}

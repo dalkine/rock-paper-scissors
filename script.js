@@ -98,8 +98,9 @@ function game() {
     console.log("YOU LOSE");
   }
 }
-playerSelection = getplayerSelection();
+/* playerSelection = getplayerSelection();
 computerSelection = getComputerChoice(3);
 console.log("computer choose " + convertNumbertoRPS(computerSelection));
 console.log("you choose " + convertNumbertoRPS(playerSelection));
 console.log(game());
+ */
