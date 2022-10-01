@@ -1,42 +1,54 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>RPS</title>
-    <link rel="styleSheet" href="/style.css" />
-    <script src="/script.js"></script>
-  </head>
-  <body>
-    <div class="header">
-      <h1>ROCK PAPER SCISSORS</h1>
-    </div>
-    <h2>Win 5 Rounds</h2>
 
-    <div class="scoreSection">
-      <div class="gameScore">
-        <h2>Score</h2>
-        <h3>0 - 1</h3>
-      </div>
-      <div class="roundResults">
-        <h2>Round result</h2>
-        <h3>rock beats scissors</h3>
-        <!-- <div class="playerResult">Player</div>
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>RPS</title>
+  <link rel="styleSheet" href="/style.css" />
+  <script src="/script.js" defer></script>
+</head>
+
+<body>
+  <div class="header">
+    <h1>ROCK PAPER SCISSORS</h1>
+  </div>
+  <h2>Win 5 Rounds</h2>
+
+  <div class="scoreSection">
+    <div class="gameScore">
+      <h2>Score</h2>
+      <h3 class="score">0 - 0</h3>
+    </div>
+    <div class="roundResults">
+      <h2 class="round-results">Round result</h2>
+      <h3 class="choose-results"></h3>
+      <!-- <div class="playerResult">Player</div>
         <div class="computerResult">Computer</div> -->
-      </div>
-      <div class="playersChose">
-        <h2>Player:</h2>
-        <div class="rpsWrapper playerChose">Player</div>
-        <div class="rpsWrapper computerChose">Computer</div>
-        <h2>: Computer</h2>
-      </div>
     </div>
-    <div class="optionsSection">
-      <div class="rpsWrapper">ROCK</div>
-      <div class="rpsWrapper">PAPER</div>
-      <div class="rpsWrapper">SCISSORS</div>
+    <div class="playersChoice">
+      <h2>Player:</h2>
+      <div class="rpsWrapper playerChoice"><span id="playerIcon" class="btnIcon">&#128074</span></div>
+      <div class="rpsWrapper computerChoice"><span id="computerIcon" class="btnIcon">&#128074</span></div>
+      <h2>:Computer</h2>
     </div>
-    <div class="footer"></div>
-  </body>
+  </div>
+  <div class="optionsSection">
+    <div class="rpsWrapper">
+      <button class="btn btnIcon" id="rock" >&#128074</button>
+    </div>
+    <div class="rpsWrapper">
+      <button class="btn btnIcon" id="paper">&#128075
+    </div>
+    </button>
+    <div class="rpsWrapper">
+      <button class="btn btnIcon" id="scissors">&#9996</button>
+    </div>
+  </div>
+  </div>
+  <div id="Ngame"></div>
+  <div class="footer"></div>
+</body>
+
 </html>

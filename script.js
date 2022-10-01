@@ -6,6 +6,7 @@ const LOSE = 1;
 const DRAW = 0;
 const wintable = ["draw", "lose", "win"];
 const rps = ["rock", "paper", "scissors"];
+const icons = ["👊", "👋", "✌"];
 function convertNumbertoRPS(num) {
   switch (num) {
     case ROCK:
@@ -28,24 +29,79 @@ function getComputerChoice(max) {
   let ran = Math.floor(Math.random() * max);
   return ran;
 }
-function getplayerSelection() {
-  let choose = prompt("Choose a option");
-  choose = choose.toLowerCase();
-
-  let pl = rps.indexOf(choose);
+pla = document.querySelector(".playerChoice");
+console.log(pla);
+function getplayerSelection(choice) {
+  let pl = rps.indexOf(choice);
 
   return pl;
 }
-function displayResults(result) {
-  console.log("You " + wintable[result] + " this round.");
-  console.log(
-    convertNumbertoRPS(playerSelection) +
-      "  " +
-      wintable[result] +
-      "  " +
-      convertNumbertoRPS(computerSelection)
-  );
+function setRound(e) {
+  playerSelection = getplayerSelection(this.id);
+  computerSelection = getComputerChoice(3);
+
+  const pchoose = document.querySelector("#playerIcon");
+  pchoose.textContent = icons[playerSelection];
+
+  const cchoose = document.querySelector("#computerIcon");
+  cchoose.textContent = icons[computerSelection];
+
+  let roundResult = playRound(playerSelection, computerSelection);
+
+  recordScore(roundResult);
+  if (computerScore == 5 || playerScore == 5) {
+    displayResults(roundResult);
+    const newgame = document.createElement("button");
+    newgame.classList = "btnIcon";
+    newgame.textContent = "restart";
+    newgame.addEventListener("click", restart);
+    Ngame.appendChild(newgame);
+
+    //remove events
+  }
 }
+function restart() {
+  playerScore = 0;
+  computerScore = 0;
+  displayResults(0);
+}
+function recordScore(roundResult) {
+  switch (roundResult) {
+    case DRAW:
+      break;
+    case LOSE:
+      computerScore++;
+      break;
+    case WIN:
+      playerScore++;
+    default:
+      break;
+  }
+  displayResults(roundResult);
+
+  return;
+}
+function displayResults(result) {
+  const res = document.querySelector(".round-results");
+  res.textContent = "You " + wintable[result] + " this round.";
+  const total_score = document.querySelector(".choose-results");
+  total_score.textContent =
+    convertNumbertoRPS(playerSelection) +
+    "  " +
+    wintable[result] +
+    "  " +
+    convertNumbertoRPS(computerSelection);
+
+  const scores = document.querySelector(".score");
+  scores.textContent = playerScore + " - " + computerScore;
+}
+let computerScore = 0;
+let playerScore = 0;
+const btns = document.querySelectorAll(".btn");
+btns.forEach((btn) => {
+  btn.addEventListener("click", setRound);
+});
+
 function playRound(playerSelection, computerSelection) {
   let result;
   if (playerSelection === computerSelection) {
@@ -67,12 +123,14 @@ function playRound(playerSelection, computerSelection) {
   }
   return result;
 }
+function game2() {
+  let playerScore = 0;
+  let computerScore = 0;
+}
 function game() {
   let playerScore = 0;
   let computerScore = 0;
   for (let i = 0; i < 5; i++) {
-    playerSelection = getplayerSelection();
-    computerSelection = getComputerChoice(3);
     let roundResult = playRound(playerSelection, computerSelection);
     switch (roundResult) {
       case DRAW:
@@ -98,8 +156,7 @@ function game() {
     console.log("YOU LOSE");
   }
 }
-/* playerSelection = getplayerSelection();
-computerSelection = getComputerChoice(3);
+/* 
 console.log("computer choose " + convertNumbertoRPS(computerSelection));
 console.log("you choose " + convertNumbertoRPS(playerSelection));
 console.log(game());

@@ -18,22 +18,34 @@ h1 {
   display: flex;
 }
 .rpsWrapper {
-  height: 250px;
-  width: 250px;
+  height: 200px;
+  width: 200px;
   margin: 10px;
+  text-align: center;
+
   background-color: #7dcfb6;
 }
-.playersChose {
+.playersChoice {
   display: flex;
 }
-div.playersChose > .rpsWrapper {
+div.playersChoice > .rpsWrapper {
   height: 200px;
   width: 200px;
   flex: 2 1 0;
 }
-div.playersChose > h2 {
+div.playersChoice > h2 {
   flex: 1 1 0;
 }
 .scoreSection {
   text-align: center;
+}
+.btnIcon {
+  height: 200px;
+  width: 200px;
+  font-size: 50px;
+  margin: 0;
+  background-color: #7dcfb6;
+}
+span {
+  line-height: 200px;
 }
